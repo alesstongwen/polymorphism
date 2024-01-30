@@ -1,6 +1,6 @@
-import { ISortable } from "./ISortable";
+import { ISortable } from "./isortable";
 
-export class StringGroup implements ISortable {
+export class CharacterGroup implements ISortable {
   data: string;
 
   constructor(data: string) {
@@ -16,9 +16,7 @@ export class StringGroup implements ISortable {
     stringArray[leftPos] = stringArray[rightPos];
     stringArray[rightPos] = tempLeft;
   }
-  // ademi
   compare(leftPos: number, rightPos: number): boolean {
     return this.data[leftPos].toLowerCase() > this.data[rightPos].toLowerCase();
   }
 }
-StringGroup;
