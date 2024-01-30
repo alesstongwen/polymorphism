@@ -13,7 +13,6 @@ export class SortUtil {
     while (!isSorted) {
       isSorted = true;
       for (let i = 0; i < lastUnsorted; i++) {
-        // HANDLE LINKED LIST LOGIC HERE
         if (this.collection.compare(i, i + 1)) {
           this.collection.swap(i, i + 1);
           isSorted = false;

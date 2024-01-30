@@ -60,7 +60,6 @@ export class LinkedListGroup implements ISortable {
 
   swap(leftPos: number, rightPos: number): void {
     if (!this.head) throw new Error("List is empty");
-    // if (leftPos === rightPos) return;
 
     let leftNode = this.at(leftPos);
     let rightNode = this.at(rightPos);
