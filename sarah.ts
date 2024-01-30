@@ -1,5 +1,5 @@
 import { ISortable } from "./isortable";
-class SortUtil {
+export class SortUtil {
   collection: ISortable;
 
   constructor(collection: ISortable) {
@@ -14,31 +14,12 @@ class SortUtil {
       isSorted = true;
       for (let i = 0; i < lastUnsorted; i++) {
         // HANDLE LINKED LIST LOGIC HERE
-        if (this.collection instanceof LinkedList) {
-          // HELP! -Sarah
-        }
-
-        // HANDLE LIST OF NUMBERS LOGIC HERE
-        // I GOT IT TO WORK WITH ARRAY OF NUMBERS
-        if (this.collection instanceof Array) {
-          if (this.collection[i] > this.collection[i + 1]) {
-            let tempLeft = collection[i];
-            this.collection[i] = this.collection[i + 1];
-            this.collection[i + 1] = tempLeft;
-            isSorted = false;
-          }
-        }
-
-        // HANDLE STRING LOGIC HERE
-        if (typeof this.collection === "string") {
-          // HELP! -Sarah
+        if (this.collection.compare(i, i + 1)) {
+          this.collection.swap(i, i + 1);
+          isSorted = false;
         }
       }
       lastUnsorted--;
     }
   }
 }
-
-const sortUtil = new SorterUtil([10, 3, -5, 0]);
-sortUtil.sort();
-console.log(sorter.collection);
