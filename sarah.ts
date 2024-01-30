@@ -1,7 +1,8 @@
+import { ISortable } from "./isortable";
 class SortUtil {
-  collection: number[] | string | LinkedList;
+  collection: ISortable;
 
-  constructor(collection: number[] | string | LinkedList) {
+  constructor(collection: ISortable) {
     this.collection = collection;
   }
 
